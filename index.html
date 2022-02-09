@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/cerulean/bootstrap.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+
+        .top-bar {
+            width: 100%;
+            height: 30px;
+            background-color: #f0f8ff;
+        }
+
+        .top-bar ul {
+            text-align: center;
+            list-style: none;
+        }
+
+        .top-bar ul li {
+            display: inline-block;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+
+        .top-bar ul li a {
+            text-decoration: none;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <ul>
+            <li><a href="" class="text-dark">Option 1</a></li>
+            <li><a href="" class="text-dark">Option 2</a></li>
+            <li><a href="" class="text-dark">Option 3</a></li>
+            <li><a href="" class="text-dark">Option 4</a></li>
+        </ul>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">YT Tag Extractor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav" style="width: 100%; justify-content: right;">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="$('#aboutus').modal('show');">About
+                            US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="$('#contactus').modal('show');">Contact
+                            US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="$('#privacy').modal('show');">Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-3">
+        <p>Place your Ad Code 1</p>
+        <div class="text-center">
+            <h1>Extract the tags from a Youtube Video</h1>
+            <p>This tool can extract tags from a Youtube video. Just enter the URL and ur tool does the rest.</p>
+            <h3>Extract the tags from a Youtube Video</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="container my-3">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Youtube URL</span>
+                <input type="text" id="url" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <button class="btn btn-primary" type="button" onclick="my()" id="button-addon2">Get</button>
+                <button class="btn btn-warning" onclick="window.location.reload();" type="button"
+                    id="button-addon2">Refresh</button>
+            </div>
+        </div>
+
+        <div class="input-area">
+
+        </div>
+
+        <div class="canvas-area" id="technicalarpcanva">
+
+            <div id="result">
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="" class="my-2">Title</label>
+            <textarea type="text" id="title" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="" class="my-2">Description</label>
+            <textarea id="discription" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="" class="my-2">Tags</label>
+            <textarea type="text" id="tags" class="form-control"></textarea>
+        </div>
+        <div class="form-group text-center my-3">
+            <button onclick="myFunction()" class="btn btn-success">Coppy All Tags</button>
+        </div>
+        <p class="my-3 text-center">Place your Ad Code 2</p>
+
+        <div class="card border-secondary mb-3">
+            <div class="card-body">
+                <p class="card-text">YouTube tags are the hidden metatags associated with videos on YouTube. Not all
+                    videos have these tags as it’s up to the
+                    video publisher to add them when they upload the video.
+                    The Tag Extractor tool is a handy way of extracting and revealing these meta tags associated with
+                    any public video.
+                    Extracting YouTube Tags can be very insightful to understand how competitor videos and other
+                    high-performing videos are
+                    using these tags to boost their performance.</p>
+            </div>
+        </div>
+        <div class="card border-secondary mb-3">
+            <div class="card-body">
+                <p class="card-text">Tags are not to be confused with HashTags which are displayed in the video
+                    description and above the video title.</p>
+            </div>
+        </div>
+
+        <h2 class="text-center my-2">What are YouTube Tags?</h2>
+
+        <div class="card border-secondary mb-3">
+            <div class="card-body">
+                <p class="card-text">The confusing thing about YouTube is there are two types of tags:</p>
+                <ol>
+                    <li><b>Tags</b>: which are the invisible “meta” Tags associated with a video. This is what the Tag
+                        Extractor extracts</li>
+                    <li><b>HashTags</b>: which are the visible tags shown above a video title. See more information
+                        about YouTube HashTags.</li>
+                </ol>
+                <p class="card-text">Tags are added to a video when it is uploaded on YouTube. Unlike HashTags, they do
+                    not have pound (#) signs in front of
+                    them and they can also contain spaces to encompass a string of multiple words. Best practice is to
+                    use all lowercase
+                    Tags with alpha-numeric characters.</p>
+                <p class="text-card">Since these Tags are invisible on the actual video page, our friends at <a
+                        href="">SEOptimer</a> generously shared some screenshots
+                    with us so we can peek behind the scenes at how they tagged their videos.</p>
+                <p class="text-card">In <a href="">YouTube Studio</a>, at the bottom of the “Video details” page is a
+                    hyperlink “Show More”:</p>
+                <img src="https://tuberanker.com/storage/images/media/32/fullhd-tag-extractor-studio.png" width="100%">
+                <p class="text-card">Once this is clicked, it expands further options including “Tags”:</p>
+                <img src="https://tuberanker.com/storage/images/media/33/fullhd-tag-extractor-tags.png" width="100%">
+                <p class="text-card">A YouTube video can have up to 500 characters worth of Tags - which is a lot! In
+                    the example above, we can see the
+                    SEOptimer video has 11 Tags. Altogether these Tags only take up 164 characters of the 500 limit, so
+                    there’s room for
+                    many more.</p>
+                <p class="text-card">Now here comes the magic. Using the YouTube Tag Extractor, we can easily reveal
+                    these hidden meta tags with the click of
+                    a button:</p>
+                <p class="text-card">You’ll notice, the Tags are importantly extracted in exactly the same order that
+                    the author has used. This gives you a
+                    really great insight about what the author thinks is (a) the most important topics in the video and;
+                    (b) the highest
+                    priority tags for video SEO.</p>
+                <p class="text-card">Why are YouTube Tags important?</p>
+                <p class="text-card">So now we know the YouTube Tag Extractor works like magic on any public YouTube
+                    video and extracts the invisible meta
+                    tags whilst maintaining the order of those Tags as denoted by the author of the video.</p>
+                <p class="text-card"><b>But why is this important?</b> You’re likely reading this page at the moment
+                    because you’re interested in the overall topic
+                    of Video SEO. We know from YouTube themselves that many signals contribute to the overall ranking in
+                    the search result
+                    page (title, description, hashtags, thumbnail, tags, quality of video, etc).</p>
+                <p class="text-card">We recommend getting the basics right and utilize all the features that YouTube
+                    provide to categorize and apply meaning
+                    to your videos. The jury might be out as to the degree of influence the hidden meta tags have on
+                    search result rankings,
+                    but our recommendation is always to err on the side of optimization and use all YouTube features
+                    together. After all,
+                    the more YouTube understands what your video is about, the more chance your videos will rank higher
+                    in YouTube search
+                    results.</p>
+                <p class="text-card">YouTube Tags strategy</p>
+                <p class="text-card">There are some strategic considerations when extracting Tags from competitor
+                    videos. There are two possible scenarios
+                    when extracting Tags from a YouTube video using this tool:</p>
+            </div>
+        </div>
+
+        <div class="card border-secondary mb-3">
+            <div class="card-body">
+                <p class="card-text">1. <b>The video has no Tags:</b> this is actually quite common since the Tags field
+                    is hidden behind the “Show More” text link
+                    right at the bottom of the video details page in YouTube Studio. So unless your competitors are
+                    YouTube-savvy, they will
+                    likely look straight past this and upload the video with zero tags. This is a good outcome for you
+                    because any tags you
+                    add to your video will be better. Consider the wording competitors use in the video title and
+                    description and if they
+                    use any HashTags in the video description.</p>
+            </div>
+        </div>
+
+        <div class="card border-secondary mb-3">
+            <div class="card-body">
+                <p class="card-text">2. <b>The video has Tags</b>: like the example above from SEOptimer which revealed
+                    11 Tags on their video, the next step is to
+                    use your best judgement to assess the quality of these Tags. Try to look for anything unexpected or
+                    unusual about the
+                    Tags and the ordering of those Tags. Again, the above example from SEOptimer is a very typical group
+                    of Tags which start
+                    with the brand term “seoptimer”, then include broad category terms like “seo” and go wider to
+                    include sub-category or
+                    niche terms like “seo reporting”.
+                    The ordering of these Tags gives you a big clue about how they think about their key terms. For
+                    direct competitors, we
+                    recommend using similar broad Tags to remain competitive but utilize some unique Tags as well to
+                    capture niche searches
+                    where you may have a competitive advantage.</p>
+            </div>
+        </div>
+
+        <div class="card border-secondary mb-3">
+            <div class="card-body">
+                <p class="card-text">The great thing about Tags is that you can edit them after you publish your videos
+                    too. So if you feel some of your
+                    videos could be performing better in search or competitors are outperforming you on some key terms,
+                    try editing your
+                    Tags accordingly.
+                    One final consideration in thinking about your Tags is what YouTube describe directly above the Tags
+                    input box:</p>
+            </div>
+        </div>
+
+    </div>
+    <footer class="container" id="footer">
+
+        <div style="text-align: center;">
+
+            <div class="Container text-center mb-10">
+                <a href="#privacy" data-toggle="modal" data-target="#privacy">Privacy Policy </a> |
+                <a href="#termsofuse" data-toggle="modal" data-target="#termsofuse">Terms of Use</a> |
+                <a href="#aboutus" data-toggle="modal" data-target="#aboutus">About Us </a> |
+                <a href="javascript:void(0);" onclick="$('#contactus').modal('show')">Contact Us</a>
+            </div>
+
+            <p class="text-center">Copyright ©
+                <script
+                    type="text/javascript">var creditsyear = new Date(); document.write(creditsyear.getFullYear());</script>
+                2021
+                <a href="https://youtubetagextractor.com/">YouTube Tag Extractor</a>
+            </p>
+            <div id="credits" class="text-center" style="margin-bottom:1.5rem;">
+                Distributed With Co Web Marker</div>
+
+        </div>
+    </footer>
+
+    <div id="contactus" class="modal fade technicalarpModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header alert-success">
+                    <h4 class="modal-title">Contact Us</h4>
+                    <button aria-hidden="true" data-dismiss="modal" class="btn btn-default close" type="button"
+                        onclick="$('#contactus').modal('hide');">&times;</button>
+                </div>
+                <form method="POST" action="" class="modal-body">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Message</label>
+                        <textarea type="text" class="form-control"></textarea>
+                    </div>
+                    <div class="mt-3" style="width: 100%; text-align: right;">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+    </div>
+
+    <div id="privacy" class="modal fade technicalarpModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h4 class="modal-title">PRIVACY POLICY</h4>
+                    <button onclick="$('#privacy').modal('hide');" aria-hidden="true" data-dismiss="modal"
+                        class="close btn btn-default " type="button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>PRIVACY POLICY Text Write Down</p>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" onclick="$('#privacy').modal('hide');" class="btn btn-default"
+                        type="button">close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div id="aboutus" class="modal fade technicalarpModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h4 class="modal-title">ABOUT US</h4>
+                    <button onclick="$('#aboutus').modal('hide');" aria-hidden="true" data-dismiss="modal"
+                        class="close btn btn-default " type="button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p> About Script Write</p>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" onclick="$('#aboutus').modal('hide');" class="btn btn-default"
+                        type="button">close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div id="termsofuse" class="modal fade technicalarpModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header alert-warning">
+                    <h4 class="modal-title">TERM OF USE</h4>
+                    <button onclick="$('#termsofuse').modal('hide');" aria-hidden="true" data-dismiss="modal"
+                        class="close" type="button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>TERM OF USE INFORMATION IF YOU WANT TO REMOVE IT JUST REMOVE CODE</p>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/2918676466-widgets.js"></script>
+    <script type='text/javascript'>
+        window['__wavt'] = 'AOuZoY5OPFelX-ERyTyvezDMnNuOWIsAMQ:1635056027036'; _WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5451448882494799946', '//typewala.blogspot.com/', '5451448882494799946');
+        _WidgetManager._SetDataContext([{ 'name': 'blog', 'data': { 'blogId': '5451448882494799946', 'title': 'learntyping', 'url': 'https://typewala.blogspot.com/', 'canonicalUrl': 'https://typewala.blogspot.com/', 'homepageUrl': 'https://typewala.blogspot.com/', 'searchUrl': 'https://typewala.blogspot.com/search', 'canonicalHomepageUrl': 'https://typewala.blogspot.com/', 'blogspotFaviconUrl': 'https://typewala.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en-GB', 'localeUnderscoreDelimited': 'en_gb', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22learntyping - Atom\x22 href\x3d\x22https://typewala.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22learntyping - RSS\x22 href\x3d\x22https://typewala.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22learntyping - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/5451448882494799946/posts/default\x22 /\x3e\n', 'meTag': '\x3clink rel\x3d\x22me\x22 href\x3d\x22https://www.blogger.com/profile/02565701292357430455\x22 /\x3e\n', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/ce49c797cbb390ee', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': { 'platforms': [{ 'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': '' }, { 'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook' }, { 'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog' }, { 'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter' }, { 'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest' }, { 'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email' }], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en_GB\x27};\x3c/script\x3e' }, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'index', 'pageName': '', 'pageTitle': 'learntyping' } }, { 'name': 'features', 'data': { 'sharing_get_link_dialog': 'true', 'sharing_native': 'false' } }, { 'name': 'messages', 'data': { 'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard', 'ok': 'Ok', 'postLink': 'Post link' } }, { 'name': 'template', 'data': { 'name': 'custom', 'localizedName': 'Custom', 'isResponsive': true, 'isAlternateRendering': false, 'isCustom': true } }, { 'name': 'view', 'data': { 'classic': { 'name': 'classic', 'url': '?view\x3dclassic' }, 'flipcard': { 'name': 'flipcard', 'url': '?view\x3dflipcard' }, 'magazine': { 'name': 'magazine', 'url': '?view\x3dmagazine' }, 'mosaic': { 'name': 'mosaic', 'url': '?view\x3dmosaic' }, 'sidebar': { 'name': 'sidebar', 'url': '?view\x3dsidebar' }, 'snapshot': { 'name': 'snapshot', 'url': '?view\x3dsnapshot' }, 'timeslide': { 'name': 'timeslide', 'url': '?view\x3dtimeslide' }, 'isMobile': false, 'title': 'learntyping', 'description': '', 'url': 'https://typewala.blogspot.com/', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': true, 'isArchive': false, 'isLabelSearch': false } }]);
+        _WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'main', document.getElementById('HTML1'), {}, 'displayModeFull'));
+    </script>
+
+    <script>
+
+        function love() {
+
+
+            var url = document.getElementById('url').value;
+            var kmg = url.split("v=")[1];
+            var API = "AIzaSyC5XYHdF6wfY_1V9F-upB_T55vciPOu8ro";
+            var link = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${kmg}&type=video&key=${API}`;
+            fetch(link)
+                .then((response) => {
+                    return response.json();
+
+                })
+                .then((data) => {
+                    console.log(data);
+
+                    var lov = data.items[0].snippet.title;
+
+                    var dis = data.items[0].snippet.description;
+                    var tags = data.items[0].snippet.tags;
+                    var publishedAt = data.items[0].snippet.publishedAt;
+                    var thumbnails = data.items[0].snippet.thumbnails.medium.url;
+                    var thumb = "<img src='" + thumbnails + "'/>";
+                    console.log(thumbnails);
+                    console.log(publishedAt);
+                    //console.log(thumb);
+                    // console.log(dis);
+                    //  console.log(tags);
+                    document.getElementById('result').innerHTML = thumb;
+
+                    document.getElementById('title').innerHTML = lov;
+                    document.getElementById('discription').innerHTML = dis;
+
+
+                    for (var i = 0; i < tags.length; i++) {
+                        console.log((i + 1) + '. ' + tags[i])
+                        document.getElementById('tags').innerHTML = tags;
+
+                    }
+
+                });
+
+
+        }
+
+        function my() {
+            love();
+            hate();
+        }
+
+    </script>
+    <script>
+
+        function hate() {
+
+
+            var url = document.getElementById('url').value;
+
+            var kmg = url.substring(17, 28);
+            var API = "AIzaSyC5XYHdF6wfY_1V9F-upB_T55vciPOu8ro";
+            var link = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${kmg}&type=video&key=${API}`;
+            fetch(link)
+                .then((response) => {
+                    return response.json();
+
+                })
+                .then((data) => {
+                    console.log(data);
+
+                    var lov = data.items[0].snippet.title;
+
+                    var dis = data.items[0].snippet.description;
+                    var tags = data.items[0].snippet.tags;
+                    var publishedAt = data.items[0].snippet.publishedAt;
+                    var thumbnails = data.items[0].snippet.thumbnails.medium.url;
+                    var thumb = "<img src='" + thumbnails + "'/>";
+                    console.log(thumbnails);
+                    console.log(publishedAt);
+                    //console.log(thumb);
+                    // console.log(dis);
+                    //  console.log(tags);
+                    document.getElementById('result').innerHTML = thumb;
+
+                    document.getElementById('title').innerHTML = lov;
+                    document.getElementById('discription').innerHTML = dis;
+
+
+                    for (var i = 0; i < tags.length; i++) {
+                        console.log((i + 1) + '. ' + tags[i])
+                        document.getElementById('tags').innerHTML = tags;
+
+                    }
+
+                });
+
+
+        }
+
+        function myFunction() {
+            /* Get the text field */
+            var copyText = document.getElementById("tags");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
+        }
+
+    </script>
+
+</body>
+
+</html>
